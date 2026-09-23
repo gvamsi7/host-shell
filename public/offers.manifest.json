@@ -1,8 +1,8 @@
 {
   "version": 1,
   "offers": [
-    { "id": "payments", "remoteUrl": "http://localhost:3001/offer.js" },
-    { "id": "trading", "remoteUrl": "http://localhost:3002/offer.js" },
-    { "id": "analytics", "remoteUrl": "http://localhost:3003/offer.js" }
+    { "id": "payments", "route": "/offers/payments", "remoteUrl": "/offers/payments/offer.js" },
+    { "id": "trading", "route": "/offers/trading", "remoteUrl": "/offers/trading/offer.js" },
+    { "id": "analytics", "route": "/offers/analytics", "remoteUrl": "/offers/analytics/offer.js" }
   ]
 }
