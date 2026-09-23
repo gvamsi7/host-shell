@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "webpack serve --config webpack.config.cjs --mode development",
-    "dev:workspace": "concurrently -k -n SHELL,PAYMENTS,TRADING,ANALYTICS \"npm run dev\" \"npm --prefix ../offer-payments run dev\" \"npm --prefix ../offer-trading run dev\" \"npm --prefix ../offer-analytics run dev\"",
+    "dev:workspace": "npm run build:offers && concurrently -k -n SHELL,PAYMENTS,TRADING,ANALYTICS \"npm run dev\" \"npm --prefix ../offer-payments run dev\" \"npm --prefix ../offer-trading run dev\" \"npm --prefix ../offer-analytics run dev\"",
     "build": "webpack --config webpack.config.cjs --mode production",
-    "build:workspace": "npm --prefix ../offer-payments run build && npm --prefix ../offer-trading run build && npm --prefix ../offer-analytics run build && npm run build && node scripts/copy-offers.cjs",
-    "start": "webpack serve --config webpack.config.cjs --mode development"
+    "build:workspace": "npm run build:offers && npm run build && node scripts/copy-offers.cjs",
+    "start": "webpack serve --config webpack.config.cjs --mode development",
+    "build:offers": "npm --prefix ../offer-payments run build && npm --prefix ../offer-trading run build && npm --prefix ../offer-analytics run build"
   },
   "dependencies": {
     "react": "^18.3.1",
