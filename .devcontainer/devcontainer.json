@@ -1,6 +1,8 @@
 {
-  "name": "host-shell",
+  "name": "host-shell-workspace",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "workspaceMount": "source=${localWorkspaceFolder}/..,target=/workspaces,type=bind",
+  "workspaceFolder": "/workspaces/host-shell",
   "forwardPorts": [3000],
-  "postCreateCommand": "npm install"
+  "postCreateCommand": "npm install && npm --prefix ../offer-payments install && npm --prefix ../offer-trading install && npm --prefix ../offer-analytics install"
 }
