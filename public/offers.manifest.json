@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "offers": [
+    { "id": "payments", "remoteUrl": "http://localhost:3001/offer.js" },
+    { "id": "trading", "remoteUrl": "http://localhost:3002/offer.js" },
+    { "id": "analytics", "remoteUrl": "http://localhost:3003/offer.js" }
+  ]
+}
